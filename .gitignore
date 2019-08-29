@@ -1,0 +1,14 @@
+
+*.sublime-workspace
+*.orig
+*__pycache__*
+*.lst
+*.pyc
+
+Pic32MZTestBed.X/build/
+Pic32MZTestBed.X/debug/
+Pic32MZTestBed.X/dist/
+Pic32MZTestBed.X/nbproject/private/
+Pic32MZTestBed.X/nbproject/*.*
+!Pic32MZTestBed.X/nbproject/project.xml
+!Pic32MZTestBed.X/nbproject/configurations.xml
