@@ -14,9 +14,8 @@ Description:
 	** line that can be interpreted by the receiving program to do various things like change the text color of that line. These output
 	** levels can also be enabled and disabled using the ####_LEVEL_OUTPUT_ENABLED defines.
 	
-	** Debug input is immediately echoed back to the computer when received so that user can see what they are typing. The \b (0x08) character
-	** is interpretted as a back space and removes a character from the current input line. Once we receive a \n (0x0A) we consider the input
-	** done and let the application know that an command is ready to be processed.
+	** Debug input is immediately echoed back to the computer when received so that user can see what they are typing. Once we
+	** receive a \n (0x0A) we consider the input done and let the application know that a command is ready to be processed.
 	
 	** The new-line format can be controlled with DEBUG_WINDOWS_LINE_ENDINGS. If this is true then we will send a \r\n for every \n in the debug output
 	** If it is false then we just send \n characters by themselves.

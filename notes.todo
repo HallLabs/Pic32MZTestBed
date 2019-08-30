@@ -2,7 +2,13 @@
 //It's just a regular text file with the .todo extension so Sublime Text uses the correct syntax highlighting
 
 # TODO List
-	[ ] Get the project set up and working with 
+	[X] Test all the test pins
+	[X] Put electrical tape around wires
+	[X] Set all N/C pins to analog mode
+	[X] Add debouncing for the buttons
+	[ ] Set up a second header and program second board
+	[ ] Find two FTDI cables to send (order two more)
+	[ ] Take picture of contents, package, write an email
 
 # Available Remappable Pins
 RA2

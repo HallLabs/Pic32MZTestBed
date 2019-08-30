@@ -14,6 +14,7 @@
 		[
 			"ANALOG",
 			"ATTR_PACKED",
+			"BUTTON_DEBOUNCE_TIME",
 			"CLEARED",
 			"DBG_UART_BRG",
 			"DBG_UART_ERRINTEN",
@@ -151,6 +152,12 @@
 			"TEST_LED1_VALUE",
 			"TEST_LED2_VALUE",
 			"TEST_LED3_VALUE",
+			"TEST_PIN1_VALUE",
+			"TEST_PIN2_VALUE",
+			"TEST_PIN3_VALUE",
+			"TEST_PIN4_VALUE",
+			"TEST_PIN5_VALUE",
+			"TEST_PIN6_VALUE",
 			"TICK_TIMER_ISR_PERIOD",
 			"TICK_TIMER_PERIOD_TWEAK",
 			"TICK_TIMER_PR_VALUE",
@@ -261,6 +268,9 @@
 		],
 		"custom_globals":
 		[
+			"ButtonDebounceTimer1",
+			"ButtonDebounceTimer2",
+			"ButtonDebounceTimer3",
 			"DebugOutputBackoff",
 			"MicroDeviceID",
 			"MicroDeviceRevision",

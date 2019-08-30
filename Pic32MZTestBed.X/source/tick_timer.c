@@ -26,6 +26,9 @@ volatile u32 TickCounterSec = 0; //Loops in 136.19 years
 // |     Ms Countdown Timers      |
 // +==============================+
 volatile u32 DebugOutputBackoff = 0;
+volatile u32 ButtonDebounceTimer1 = 0;
+volatile u32 ButtonDebounceTimer2 = 0;
+volatile u32 ButtonDebounceTimer3 = 0;
 
 // +==============================+
 // |      Ms Countup Timers       |
@@ -94,6 +97,9 @@ void __ISR(_TIMER_9_VECTOR, ipl2AUTO) TickTimerIsr(void)
 	// +==============================+
 	TickCounterMs++;
 	Decrement(DebugOutputBackoff);
+	Decrement(ButtonDebounceTimer1);
+	Decrement(ButtonDebounceTimer2);
+	Decrement(ButtonDebounceTimer3);
 	
 	//TODO: Add Ms Countup timers here
 	

@@ -13,6 +13,6 @@ Description:
 #define VERSION_MINOR 0
 
 //NOTE: This build number is incremented by a python script automatically whenever the project is built
-#define VERSION_BUILD 20
+#define VERSION_BUILD 28
 
 #endif //  _VERSION_H

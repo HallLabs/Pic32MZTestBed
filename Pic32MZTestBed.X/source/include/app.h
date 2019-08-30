@@ -51,6 +51,8 @@ Description:
 #define DEBUG_PRINT_BUFFER_SIZE      512 //chars
 #define DEBUG_OVERFLOW_BACKOFF       1000 //ms
 
+#define BUTTON_DEBOUNCE_TIME         50 //ms
+
 // +--------------------------------------------------------------+
 // |                   Public Structures/Types                    |
 // +--------------------------------------------------------------+

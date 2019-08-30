@@ -24,8 +24,11 @@ Version_t Version = { VERSION_MAJOR, VERSION_MINOR, VERSION_BUILD };
 // |                       Private Globals                        |
 // +--------------------------------------------------------------+
 static bool btnWasDown1 = false;
+static bool btnDebounceTriggered1 = false;
 static bool btnWasDown2 = false;
+static bool btnDebounceTriggered2 = false;
 static bool btnWasDown3 = false;
+static bool btnDebounceTriggered3 = false;
 
 // +--------------------------------------------------------------+
 // |                        Initialization                        |
@@ -49,35 +52,38 @@ void AppInitialize()
 void AppUpdate()
 {
 	// +==============================+
+	// |        Button Example        |
+	// +==============================+
+	bool btnDown1 = (TEST_BTN1_VALUE == LOW);
+	if (btnDown1 != btnWasDown1 && ButtonDebounceTimer1 == 0)
+	{
+		PrintLineAt(btnDown1 ? OutputLevel_Info : OutputLevel_Debug, "Button1 %s", btnDown1 ? "Pressed" : "Released");
+		btnWasDown1 = btnDown1;
+		ButtonDebounceTimer1 = BUTTON_DEBOUNCE_TIME;
+	}
+	
+	bool btnDown2 = (TEST_BTN2_VALUE == LOW);
+	if (btnDown2 != btnWasDown2 && ButtonDebounceTimer2 == 0)
+	{
+		PrintLineAt(btnDown2 ? OutputLevel_Info : OutputLevel_Debug, "Button2 %s", btnDown2 ? "Pressed" : "Released");
+		btnWasDown2 = btnDown2;
+		ButtonDebounceTimer2 = BUTTON_DEBOUNCE_TIME;
+	}
+	
+	bool btnDown3 = (TEST_BTN3_VALUE == LOW);
+	if (btnDown3 != btnWasDown3 && ButtonDebounceTimer3 == 0)
+	{
+		PrintLineAt(btnDown3 ? OutputLevel_Info : OutputLevel_Debug, "Button3 %s", btnDown3 ? "Pressed" : "Released");
+		btnWasDown3 = btnDown3;
+		ButtonDebounceTimer3 = BUTTON_DEBOUNCE_TIME;
+	}
+	
+	// +==============================+
 	// |        Blinky Example        |
 	// +==============================+
 	TEST_LED1_VALUE = ((TickCounterMs % 1000) >= 500) ? HIGH : LOW;
 	TEST_LED2_VALUE = ((TickCounterMs % 400) >= 200) ? HIGH : LOW;
-	TEST_LED3_VALUE = ((TickCounterSec % 6) >= 3) ? HIGH : LOW;
-	
-	// +==============================+
-	// |        Button Example        |
-	// +==============================+
-	bool btn1 = (TEST_BTN1_VALUE == LOW);
-	if (btn1 != btnWasDown1)
-	{
-		PrintLineAt(btn1 ? OutputLevel_Info : OutputLevel_Debug, "Button1 %s", btn1 ? "Pressed" : "Released");
-		btnWasDown1 = btn1;
-	}
-	
-	bool btn2 = (TEST_BTN2_VALUE == LOW);
-	if (btn2 != btnWasDown2)
-	{
-		PrintLineAt(btn2 ? OutputLevel_Info : OutputLevel_Debug, "Button2 %s", btn2 ? "Pressed" : "Released");
-		btnWasDown2 = btn2;
-	}
-	
-	bool btn3 = (TEST_BTN3_VALUE == LOW);
-	if (btn3 != btnWasDown3)
-	{
-		PrintLineAt(btn3 ? OutputLevel_Info : OutputLevel_Debug, "Button3 %s", btn3 ? "Pressed" : "Released");
-		btnWasDown3 = btn3;
-	}
+	TEST_LED3_VALUE = btnDown3 ? HIGH : LOW;
 	
 	// +==============================+
 	// |      Handle Debug Input      |

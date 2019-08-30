@@ -17,6 +17,9 @@ extern volatile u32 TickCounterSec; //Loops in 136.19 years
 // |     Ms Countdown Timers      |
 // +==============================+
 extern volatile u32 DebugOutputBackoff;
+extern volatile u32 ButtonDebounceTimer1;
+extern volatile u32 ButtonDebounceTimer2;
+extern volatile u32 ButtonDebounceTimer3;
 
 // +==============================+
 // |      Ms Countup Timers       |

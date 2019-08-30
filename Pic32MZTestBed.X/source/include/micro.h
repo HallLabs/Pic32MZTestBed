@@ -70,4 +70,17 @@ void MicroReset();
 #define TEST_BTN3_PULLUP CNPUBbits.CNPUB14
 #define TEST_BTN3_VALUE  PORTBbits.   RB14
 
+//Output @TEST_PIN1 K1
+#define TEST_PIN1_VALUE LATKbits.LATK1
+//Output @TEST_PIN2 K2
+#define TEST_PIN2_VALUE LATKbits.LATK2
+//Output @TEST_PIN3 K3
+#define TEST_PIN3_VALUE LATKbits.LATK3
+//Output @TEST_PIN4 K4
+#define TEST_PIN4_VALUE LATKbits.LATK4
+//Output @TEST_PIN5 K5
+#define TEST_PIN5_VALUE LATKbits.LATK5
+//Output @TEST_PIN6 K6
+#define TEST_PIN6_VALUE LATKbits.LATK6
+
 #endif //  _MICRO_H
